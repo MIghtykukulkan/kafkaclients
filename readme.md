@@ -48,3 +48,50 @@ Start Kafka
 Open another command prompt and and move to directory C:/kafka_2.10-0.10.0.1/z(For my case)
 Enter and hit: .\bin\windows\kafka-server-start.bat .\config\server.properties
 This will start the Kafka.
+
+
+------------------------------------------------------------------------------------------------
+
+setting up parity in dev mode:
+download parity.exe 
+run :
+parity --config dev --jsonrpc-apis "web3","eth","net","private","parity","personal" --jsonrpc-cors "https://remix.ethereum.org"
+(OR)
+parity --config dev --ws-origins all --ws-hosts all --jsonrpc-interface all --jsonrpc-cors all
+
+Setting up web3 environment:
+----------------------------
+npm install web3 --save
+npm install express --save
+npm install ethereumjs-tx --save
+
+Test RPC:
+---------
+curl --data "{\"method\":\"web3_clientVersion\",\"params\":[],\"id\":1,\"jsonrpc\":\"2.0\"}" -H "Content-Type: application/json" -X POST localhost:8545
+
+this should, return
+{"jsonrpc":"2.0","result":"Parity-Ethereum//v2.5.7-stable-6bd7db96fe-20190829/x86_64-windows-msvc/rustc1.37.0","id":1}
+
+
+parity POA:
+
+ https://wiki.parity.io/Demo-PoA-tutorial
+----------
+curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"parity_newAccountFromPhrase\",\"params\":[\"node0\", \"node0\"],\"id\":0}" -H "Content-Type: application/json" -X POST localhost:8540
+
+returns : 0x00bd138abd70e2f00903268f3db08f2d25677c9e
+
+curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"parity_newAccountFromPhrase\",\"params\":[\"user\", \"user\"],\"id\":0}" -H "Content-Type: application/json" -X POST localhost:8540
+
+returns:0x004ec07d2329997267ec62b4166639513386f32e
+
+curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"parity_newAccountFromPhrase\",\"params\":[\"node1\", \"node1\"],\"id\":0}" -H "Content-Type: application/json" -X POST localhost:8541
+returns:0x00aa39d30f0d20ff03a22ccfc30b7efbfca597c2
+
+finding ENODE
+-------------
+curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"parity_enode\",\"params\":[],\"id\":0}" -H "Content-Type: application/json" -X POST localhost:8540
+
+enode://bd077a41ff75ee65a320c5a76bbc853faf62af6130b2f95d5a00c44ad2c221900665f7f525dd77c6608954abb1bb98b90de1764f06e392abe16c91741f120af1@127.0.0.1:30300
+
+curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"parity_addReservedPeer\",\"params\":[\"enode://bd077a41ff75ee65a320c5a76bbc853faf62af6130b2f95d5a00c44ad2c221900665f7f525dd77c6608954abb1bb98b90de1764f06e392abe16c91741f120af1@127.0.0.1:30300\"],\"id\":0}" -H "Content-Type: application/json" -X POST localhost:8541

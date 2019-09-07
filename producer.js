@@ -5,6 +5,7 @@ const kafka = new Kafka({
   brokers: ['localhost:9092']
 })
 
+
 const producer = kafka.producer()
 const consumer = kafka.consumer({ groupId: 'test-group' })
 

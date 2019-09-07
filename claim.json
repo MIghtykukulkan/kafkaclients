@@ -1,0 +1,296 @@
+[
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "uuidToMember",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "UUID",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "FamId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "Exist",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint64",
+				"name": "InNetwork",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "InNetworkMax",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OutNetwork",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OutNetworkMax",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OopIn",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OopInMax",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OopOut",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OopOutMax",
+				"type": "uint64"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_memberSha",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_existingAlias",
+				"type": "uint256"
+			}
+		],
+		"name": "attachAlias",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_memberSha",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_uuid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_famId",
+				"type": "uint256"
+			}
+		],
+		"name": "setUuidNew",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_memberSha",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint64",
+				"name": "_in",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "_out",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "_inoop",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "_outoop",
+				"type": "uint64"
+			}
+		],
+		"name": "add2Accum",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "famidToFamily",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "FamId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint64",
+				"name": "InNetwork",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "InNetworkMax",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OutNetwork",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OutNetworkMax",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "InNetOutOfPocket",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "InNetOutOfPocketMax",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OutNetOutOfPocket",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OutNetOutOfPocketMax",
+				"type": "uint64"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_memberSha",
+				"type": "uint256"
+			}
+		],
+		"name": "findMember",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "Exists",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint64",
+				"name": "InNetwork",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "InNetworkMax",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OutNetwork",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OutNetworkMax",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OopIn",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OopInMax",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OopOut",
+				"type": "uint64"
+			},
+			{
+				"internalType": "uint64",
+				"name": "OopOutMax",
+				"type": "uint64"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "shaToUuid",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
