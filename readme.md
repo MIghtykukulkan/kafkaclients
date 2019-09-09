@@ -75,8 +75,13 @@ this should, return
 
 parity POA:
 
+
  https://wiki.parity.io/Demo-PoA-tutorial
 ----------
+
+
+parity --unlock 0x004ec07d2329997267ec62b4166639513386f32e --password user --config node0.toml
+
 curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"parity_newAccountFromPhrase\",\"params\":[\"node0\", \"node0\"],\"id\":0}" -H "Content-Type: application/json" -X POST localhost:8540
 
 returns : 0x00bd138abd70e2f00903268f3db08f2d25677c9e
@@ -95,3 +100,6 @@ curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"parity_enode\",\"params\":[],\"id
 enode://bd077a41ff75ee65a320c5a76bbc853faf62af6130b2f95d5a00c44ad2c221900665f7f525dd77c6608954abb1bb98b90de1764f06e392abe16c91741f120af1@127.0.0.1:30300
 
 curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"parity_addReservedPeer\",\"params\":[\"enode://bd077a41ff75ee65a320c5a76bbc853faf62af6130b2f95d5a00c44ad2c221900665f7f525dd77c6608954abb1bb98b90de1764f06e392abe16c91741f120af1@127.0.0.1:30300\"],\"id\":0}" -H "Content-Type: application/json" -X POST localhost:8541
+
+
+//remix transaction id: 0xc67cd0b10c4f3ba8d5c4a4ae4b8a8f4e453d3b58420bb981c03514f318e370a4
