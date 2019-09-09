@@ -1,4 +1,6 @@
-[
+{
+	"contractName": "claim",
+	"abi": [
 	{
 		"constant": true,
 		"inputs": [
@@ -294,3 +296,5 @@
 		"type": "function"
 	}
 ]
+
+}
