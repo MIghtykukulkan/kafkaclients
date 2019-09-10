@@ -1,5 +1,5 @@
 {
-  "name": "kafkaclients",
+  "name": "kafka",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,13 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ethereumjs-tx": "^2.1.1",
     "kafkajs": "^1.10.0",
-    "md5-file": "^4.0.0",
-    "node-cron": "^2.0.3",
-    "node-gyp": "^5.0.3",
-    "solc": "^0.5.11",
-    "web3": "^1.2.1",
     "xml2json": "^0.11.2"
   }
 }
